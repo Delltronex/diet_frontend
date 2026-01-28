@@ -7,6 +7,11 @@ export default defineConfig({
     react(),
     VitePWA({
       registerType: "autoUpdate",
+
+      includeAssets: [
+        "favicon.ico"
+      ],
+
       manifest: {
         name: "NutriLife",
         short_name: "NutriLife",
@@ -15,6 +20,8 @@ export default defineConfig({
         background_color: "#ffffff",
         display: "standalone",
         start_url: "/",
+        scope: "/",
+
         icons: [
           {
             src: "/b (1).png",
@@ -25,8 +32,18 @@ export default defineConfig({
             src: "/b (2).png",
             sizes: "512x512",
             type: "image/png"
+          },
+          {
+            src: "/b (2).png",
+            sizes: "512x512",
+            type: "image/png",
+            purpose: "any maskable"
           }
         ]
+      },
+
+      devOptions: {
+        enabled: true
       }
     })
   ],
