@@ -22,7 +22,7 @@ export default defineConfig({
             type: "image/png"
           },
           {
-            src: "/a.png",
+            src: "public/b (2).png",
             sizes: "512x512",
             type: "image/png"
           }
