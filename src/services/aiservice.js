@@ -1,6 +1,6 @@
 export async function getAIDietPlan(formData, results) {
   const res = await fetch(
-    "https://diet-server-oj8p.onrender.com/api/ai/chat",
+    "https://diet-server-oj8p.onrender.com/api/ai/diet-plan",
     {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -8,5 +8,6 @@ export async function getAIDietPlan(formData, results) {
     }
   );
 
-  return res.json();
+  const data = await res.json();
+  return data.text;
 }
