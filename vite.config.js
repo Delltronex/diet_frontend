@@ -18,12 +18,10 @@ export default defineConfig({
         icons: [
           {
             src: "/b.png",
-            sizes: "192x192",
             type: "image/png"
           },
           {
             src: "/a.png",
-            sizes: "512x512",
             type: "image/png"
           }
         ]
@@ -31,7 +29,6 @@ export default defineConfig({
     })
   ],
 
-  // Vercel build output
   build: {
     outDir: "dist"
   }
