@@ -1,7 +1,7 @@
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+const API_BASE_URL = "https://YOUR_RENDER_BACKEND.onrender.com";
 
 export async function getAIDietPlan(formData, results) {
-  const res = await fetch(`${https://diet-server-oj8p.onrender.com}/api/ai/diet-plan`, {
+  const res = await fetch(`${API_BASE_URL}/api/ai/diet-plan`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -10,8 +10,9 @@ export async function getAIDietPlan(formData, results) {
   });
 
   if (!res.ok) {
-    throw new Error("Failed to fetch AI diet plan");
+    throw new Error("AI request failed");
   }
 
   return res.json();
 }
+
