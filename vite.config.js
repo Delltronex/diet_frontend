@@ -7,16 +7,10 @@ export default defineConfig({
     react(),
     VitePWA({
       registerType: "autoUpdate",
-      includeAssets: [
-        "tron.jpg",
-        "tron1.avif",
-        "Kaushal_R.pdf"
-       
-      ],
       manifest: {
         name: "NutriLife",
         short_name: "NutriLife",
-        description: "Personal AI Diet planer website",
+        description: "Personal AI Diet Planner website",
         theme_color: "#00E5FF",
         background_color: "#ffffff",
         display: "standalone",
@@ -37,7 +31,7 @@ export default defineConfig({
     })
   ],
 
-  // Required for Vercel
+  // Vercel build output
   build: {
     outDir: "dist"
   }
