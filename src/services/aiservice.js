@@ -1,4 +1,4 @@
-const API_BASE_URL = "https://YOUR_RENDER_BACKEND.onrender.com";
+const API_BASE_URL = "https://diet-server-oj8p.onrender.com";
 
 export async function getAIDietPlan(formData, results) {
   const res = await fetch(`${API_BASE_URL}/api/ai/diet-plan`, {
