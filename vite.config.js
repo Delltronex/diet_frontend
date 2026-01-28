@@ -8,8 +8,9 @@ export default defineConfig({
     VitePWA({
       registerType: "autoUpdate",
       includeAssets: [
-        a.png,
-        b.png,
+        "tron.jpg",
+        "tron1.avif",
+        "Kaushal_R.pdf"
        
       ],
       manifest: {
