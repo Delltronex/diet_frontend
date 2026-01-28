@@ -8,9 +8,9 @@ export default defineConfig({
     VitePWA({
       registerType: "autoUpdate",
       includeAssets: [
-        "tron.jpg",
-        "tron1.avif",
-        "Kaushal_R.pdf"
+        a.png,
+        b.png,
+       
       ],
       manifest: {
         name: "NutriLife",
@@ -22,7 +22,7 @@ export default defineConfig({
         start_url: "/",
         icons: [
           {
-            src: "/e.png",
+            src: "/b.png",
             sizes: "192x192",
             type: "image/png"
           },
