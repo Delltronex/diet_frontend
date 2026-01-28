@@ -8,10 +8,6 @@ export default defineConfig({
     VitePWA({
       registerType: "autoUpdate",
 
-      includeAssets: [
-        "favicon.ico"
-      ],
-
       manifest: {
         name: "NutriLife",
         short_name: "NutriLife",
@@ -24,17 +20,17 @@ export default defineConfig({
 
         icons: [
           {
-            src: "/b (1).png",
+            src: "https://cdn-icons-png.flaticon.com/192/706/706164.png",
             sizes: "192x192",
             type: "image/png"
           },
           {
-            src: "/b (2).png",
+            src: "https://cdn-icons-png.flaticon.com/512/706/706164.png",
             sizes: "512x512",
             type: "image/png"
           },
           {
-            src: "/b (2).png",
+            src: "https://cdn-icons-png.flaticon.com/512/706/706164.png",
             sizes: "512x512",
             type: "image/png",
             purpose: "any maskable"
