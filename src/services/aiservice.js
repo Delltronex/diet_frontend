@@ -9,5 +9,6 @@ export async function getAIDietPlan(formData, results) {
   );
 
   const data = await res.json();
+  console.log("AI RESPONSE:", data); // 👈 ADD THIS
   return data.text;
 }
