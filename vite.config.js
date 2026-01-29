@@ -8,6 +8,57 @@ export default defineConfig({
     VitePWA({
       registerType: "autoUpdate",
 
+      // 🔥 Service worker behavior
+      workbox: {
+        cleanupOutdatedCaches: true,
+        clientsClaim: true,
+        skipWaiting: true,
+
+        runtimeCaching: [
+          // 🖼 Images cache (auto cleanup)
+          {
+            urlPattern: ({ request }) => request.destination === "image",
+            handler: "CacheFirst",
+            options: {
+              cacheName: "images-cache-v1",
+              expiration: {
+                maxEntries: 60,
+                maxAgeSeconds: 30 * 24 * 60 * 60 // 30 days
+              }
+            }
+          },
+
+          // 📦 JS & CSS cache
+          {
+            urlPattern: ({ request }) =>
+              request.destination === "script" ||
+              request.destination === "style",
+            handler: "StaleWhileRevalidate",
+            options: {
+              cacheName: "assets-cache-v1",
+              expiration: {
+                maxEntries: 50,
+                maxAgeSeconds: 7 * 24 * 60 * 60 // 7 days
+              }
+            }
+          },
+
+          // 🔌 API cache (short-lived)
+          {
+            urlPattern: ({ url }) =>
+              url.pathname.startsWith("/api"),
+            handler: "NetworkFirst",
+            options: {
+              cacheName: "api-cache-v1",
+              expiration: {
+                maxEntries: 20,
+                maxAgeSeconds: 5 * 60 // 5 minutes
+              }
+            }
+          }
+        ]
+      },
+
       manifest: {
         name: "NutriLife",
         short_name: "NutriLife",
@@ -38,10 +89,7 @@ export default defineConfig({
         ]
       },
 
-      workbox: {
-        cleanupOutdatedCaches: true
-      },
-
+      // 🧪 Enable SW in dev
       devOptions: {
         enabled: true
       }
